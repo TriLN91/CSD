@@ -1,1 +1,12 @@
-CSD:
+I. Linked list:
+	1.singly
+	2.Doubly
+II. Stack, queen
+III. Tree:
+	1.BST
+	2.AVL
+IV. Graph
+V. Heap table
+	
+
+

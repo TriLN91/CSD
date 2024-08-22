@@ -1,8 +1,11 @@
-import javax.sound.sampled.SourceDataLine;
+
 
 public class firstDate
   {
-    public int a;
+    public static void main(String[] args) {
+        int a;
+    }
+    
     
 
     
