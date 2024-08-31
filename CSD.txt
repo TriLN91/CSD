@@ -1,3 +1,4 @@
+Sơ đồ kiến thức
 I. Linked list:
 	1.singly
 	2.Doubly
@@ -9,4 +10,19 @@ IV. Graph
 V. Heap table
 	
 
+Lý thuyết:
 
+I. Linked List/ danh sách liên kết
+1. Cấu tạo của linked list:
+	Node + liên kết
+2. Cấu trúc:
+
+head
+
+search node
+
+add node at head
+add node at last
+add node()
+delete head/last node
+delete ()v 
