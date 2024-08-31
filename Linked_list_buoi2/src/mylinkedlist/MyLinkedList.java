@@ -63,11 +63,25 @@ public class MyLinkedList {
         }  
         System.out.println("Nodes of singly linked list: ");  
         while(current != null) {  
-            System.out.print(current.data + " ");  
+            System.out.print(current.data + "  ");  
             current = current.next;  
         }  
         
+        
     }  
+
+    public void deleteFirst(){
+        
+        
+        if(head == null){
+            return;
+        }
+        Node temp = head;
+        head = head.next;
+        temp = null;
+            
+        
+    }
 
         /*Xác định một nút hiện tại ban đầu trỏ tới đầu danh sách.
 Duyệt qua danh sách cho đến khi điểm hiện tại trỏ tới null.
@@ -77,21 +91,21 @@ Hiển thị từng nút bằng cách trỏ đến nút bên cạnh nó trong m�
 
 
 
-    public static void main(String[] args) {
-        MyLinkedList linkedList = new MyLinkedList();
-        // linkedList.addFirst(1);
-        // linkedList.addFirst(2);
-        // linkedList.addFirst(3);
-        //3->2->1
+    // public static void main(String[] args) {
+    //     MyLinkedList linkedList = new MyLinkedList();
+    //     // linkedList.addFirst(1);
+    //     // linkedList.addFirst(2);
+    //     // linkedList.addFirst(3);
+    //     //3->2->1
 
-        linkedList.addLast(1);
-        linkedList.addLast(2);
-        linkedList.addLast(3);
-        //1->2->3
+    //     linkedList.addLast(1);
+    //     linkedList.addLast(2);
+    //     linkedList.addLast(3);
+    //     //1->2->3
 
-        linkedList.display();
+    //     linkedList.display();
         
-    }
+    // }
 
     
 }
