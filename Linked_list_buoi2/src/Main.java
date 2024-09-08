@@ -4,7 +4,7 @@ import mylinkedlist.Node;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        
         MyLinkedList linkedList = new MyLinkedList();
         // linkedList.addFirst(1);
         // linkedList.addFirst(2);
@@ -14,6 +14,8 @@ public class Main {
         linkedList.addLast(1);
         linkedList.addLast(2);
         linkedList.addLast(3);
+        linkedList.add(24,2 );
+        linkedList.addFirst(7);
         //1->2->3
         Node newNode = new Node();
         
@@ -21,6 +23,10 @@ public class Main {
         linkedList.display();
 
         linkedList.deleteFirst();
+       
+        linkedList.display();
+        System.out.println();
+        System.out.println("count: " + linkedList.length());
         linkedList.display();
     }
 }

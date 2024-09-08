@@ -47,40 +47,38 @@ public class MyLinkedList {
 
     public int length(){
         int count = 0;
+        if(head == null){
+            return 0;
+        } else count = 1;
         Node temp = head;
-        if(temp != null){
-            temp = temp.next;
+        while(temp.next != null){
             count++;
+            temp = temp.next;
         }
         return count ;
+
     }
 
     public void display(){
         Node current = head;  
           
-        if(head == null) {  
-            return;  
-        }  
+        if(head == null) 
+            return; 
         System.out.println("Nodes of singly linked list: ");  
         while(current != null) {  
-            System.out.print(current.data + "  ");  
+            System.out.print(current.data + " -> ");  
             current = current.next;  
         }  
-        
+        System.out.println(" ");
         
     }  
 
     public void deleteFirst(){
-        
-        
-        if(head == null){
+        if(head == null)
             return;
-        }
-        Node temp = head;
+       
         head = head.next;
-        temp = null;
-            
-        
+         
     }
 
         /*Xác định một nút hiện tại ban đầu trỏ tới đầu danh sách.
