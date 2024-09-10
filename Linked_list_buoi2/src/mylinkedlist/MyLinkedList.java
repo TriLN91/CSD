@@ -1,6 +1,8 @@
 package mylinkedlist;
 
-import java.lang.classfile.components.ClassPrinter;
+
+
+
 
 public class MyLinkedList {
     private Node head;
@@ -66,44 +68,156 @@ public class MyLinkedList {
             return; 
         System.out.println("Nodes of singly linked list: ");  
         while(current != null) {  
-            System.out.print(current.data + " -> ");  
+            System.out.print(current.getData() + " -> ");  
             current = current.next;  
         }  
-        System.out.println(" ");
+        System.out.println();
+        System.out.println();
         
     }  
 
     public void deleteFirst(){
         if(head == null)
             return;
-       
         head = head.next;
-         
     }
+
+    public void deleteLast(){
+        if (head == null)
+            return;
+        
+        if(head.next == null){
+            deleteFirst();
+        }
+        Node temp = head; // temp làm nhiệm vụ tìm ra node cuối cùng để xóa
+        Node previous = null; // ghi lại Node đứng trước temp
+        while(temp.next != null){
+            previous = temp;
+            temp = temp.next;
+        }
+        previous.next = null;
+       
+    }
+
+    public void delete(int index){
+        if(index == 0){
+            deleteFirst();
+            return;
+        } else if(index == length()  -1){
+            deleteLast();
+            return;
+        } else{
+            Node preNodeDelete = head;
+            for (int i = 1; i <= index-1; i++) {
+                preNodeDelete = preNodeDelete.next;
+            }
+            preNodeDelete.next = preNodeDelete.next.next;
+        }
+
+    }
+    
+    /*
+    * temp != null : sử dụng khi muốn cầm tất cả các node 
+    * trong linkedlist đem ra xử lí, hay làm gì đó. Căn
+    * bản là câu lệnh này sẽ bốc từ node đầu đến khi 
+    * kết thúc (temp = null)
+    * 
+    * temp.next != null : sử dụng khi cần tìm ra cái node cuối 
+    * cùng và gán nó cho temp
+    */
+
+    public boolean search(int data){
+        if(head == null)
+            return false;
+        Node temp = head;
+        while(temp != null){
+            if(temp.getData() == data)
+                return true;
+        }
+        return false;
+    }
+
+    public Node searchAtPosition(int index){
+        if( index < 0 || index >= length())
+            return null;
+        Node temp = head;
+        for (int i = 0; i <= index; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+    
 
         /*Xác định một nút hiện tại ban đầu trỏ tới đầu danh sách.
 Duyệt qua danh sách cho đến khi điểm hiện tại trỏ tới null.
 Hiển thị từng nút bằng cách trỏ đến nút bên cạnh nó trong mỗi lần lặp. */
     
+
+    //void delete(int index)
+    //void deleteLast()
+    //boolean search(int data)
+    //Node search(int index/ tìm kiếm tại 1 vị trí)
+    //Node maxNode()
+    //Node minNode()
+    //void sortByPositionToAndEnd(int to, int end)
     
+    public void delete2(int index){
+        if(index == 0){
+            deleteFirst();
+            return;
+        } else if(index == length() - 1){
+            deleteLast();
+            return;
+        } else if(index >= length() ){
+            throw new IndexOutOfBoundsException(index + "over linkedlist");
+        }
+        else{
+            Node preNodeDelete = head;
+            int count = 0;
+            while(count < index - 1){
+                preNodeDelete = preNodeDelete.next;
+                count++;
+            
 
+            }
+            
+            preNodeDelete.next = preNodeDelete.next.next;
+        }
 
+    }
 
-    // public static void main(String[] args) {
-    //     MyLinkedList linkedList = new MyLinkedList();
-    //     // linkedList.addFirst(1);
-    //     // linkedList.addFirst(2);
-    //     // linkedList.addFirst(3);
-    //     //3->2->1
+    public  void selectionSorting(){
+        if(head == null)
+            return;
+        else if( head.next == null )
+            return;
+        else{
+            Node temp = head;
+            while( temp != null ){
+                Node min = temp;
+                Node nextNode = temp.next;
+                while( nextNode != null ){
+                    if(min.getData() > nextNode.getData())
+                        min = nextNode;
+                    nextNode = nextNode.next;
+                }
 
-    //     linkedList.addLast(1);
-    //     linkedList.addLast(2);
-    //     linkedList.addLast(3);
-    //     //1->2->3
+                int variable = temp.getData();
+                temp.setData(min.getData());
+                min.setData(variable);
+                
 
-    //     linkedList.display();
+                temp = temp.next;
+            }
+
+        }
         
-    // }
+
+    }
+
+
+   
 
     
 }

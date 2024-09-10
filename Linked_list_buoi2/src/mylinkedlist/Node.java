@@ -1,7 +1,7 @@
 package mylinkedlist;
 
 public class Node {
-    public  int data;
+    private int data;
     public Node next;
       
     public Node() {

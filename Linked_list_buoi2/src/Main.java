@@ -17,16 +17,23 @@ public class Main {
         linkedList.add(24,2 );
         linkedList.addFirst(7);
         //1->2->3
-        Node newNode = new Node();
+        // Node newNode = new Node();
         
 
         linkedList.display();
 
-        linkedList.deleteFirst();
+        // linkedList.deleteFirst();
        
-        linkedList.display();
-        System.out.println();
+        // linkedList.display();
+        
         System.out.println("count: " + linkedList.length());
+        
+        // linkedList.deleteLast();
+        //linkedList.delete(2);
+        linkedList.selectionSorting();
+        linkedList.delete2(2);
+
         linkedList.display();
+        // System.out.println(linkedList.searchAtPosition(2));
     }
 }
